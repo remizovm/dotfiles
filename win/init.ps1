@@ -2,8 +2,7 @@
 # using the Chocolatey package manager. Read more about it at 
 # https://chocolatey.org/
 
-choco upgrade -y --no-progress googlechrome `
-      vim 7zip.install vlc git.install slack `
-      totalcommander docker-desktop dropbox `
-      telegram openvpn ccleaner geforce-experience `
-      obs-studio steam 
+choco upgrade -y --no-progress googlechrome vim 7zip.install vlc git.install `
+                               slack totalcommander docker-desktop dropbox `
+                               telegram openvpn ccleaner geforce-experience `
+                               obs-studio steam
