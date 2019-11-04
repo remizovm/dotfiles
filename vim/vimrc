@@ -1,0 +1,67 @@
+syntax enable
+set autoread
+set ts=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set number
+set cursorline
+set encoding=utf8
+set nocompatible
+set lazyredraw
+set ttyfast
+set relativenumber
+set showmode
+set showmatch
+set autoindent
+set smartindent
+set termguicolors
+
+" Searching settings
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set magic
+set mat=2
+
+" Misc
+set background=dark
+
+" Golang syntax highlight
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_fields=1
+let g:go_highlight_types=1
+let g:go_highlight_operators=1
+let g:go_highlight_build_constraints=1
+
+" CtrlP
+map <silent> <C-r> :CtrlPBuffer<CR>
+let g:ctrlp_map='<C-t>'
+let g:ctrlp_dotfiles=1
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_custom_ignore={'dir': '\.git$'}
+let g:ctrlp_working_path_mode=2
+
+" NERDTree-specific
+let g:NERDTreeQuitOnOpen=0
+let NERDTreeShowHidden=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd vimenter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+inoremap <silent> <CR> <C-r>=<SID>my_cr_func()<CR>
+function! s:my_cr_func()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+
+" Airline
+set laststatus=2
+
+" Plugins:
+" vim-airline
+" vim-go
+" nerdtree
+" ctrlp
+" vim-fugitive
