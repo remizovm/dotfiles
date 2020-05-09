@@ -4,14 +4,13 @@ call plug#begin('~/.vim/plugged')
 " Golang development plugin
 Plug 'fatih/vim-go'
 " Statusline
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 " Intellisense server
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Filetree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 " Git
 Plug 'tpope/vim-fugitive'
 " Side column git diff
