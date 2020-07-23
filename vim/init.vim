@@ -1,16 +1,20 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
+" Postgres 
+Plug 'lifepillar/pgsql.vim'
 " Golang development plugin
 Plug 'fatih/vim-go'
 " Statusline
 Plug 'itchyny/lightline.vim'
+"Plug 'vim-airline/vim-airline'
 " Intellisense server
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Filetree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'ryanoasis/vim-devicons'
 " Git
 Plug 'tpope/vim-fugitive'
 " Side column git diff
@@ -23,6 +27,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 " Tmux integration
 Plug 'christoomey/vim-tmux-navigator'
+" Protobuf highlighting
+Plug 'uarun/vim-protobuf'
 
 " Initialize plugin system
 call plug#end()
