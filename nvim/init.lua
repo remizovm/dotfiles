@@ -174,7 +174,13 @@ require('lazy').setup({
                 build = ":TSUpdate",
                 config = function()
                         require("nvim-treesitter.configs").setup {
-                                ensure_installed = { "c", "cpp", "go", "lua" },
+                                ensure_installed = { 
+																	"c", 
+																	"cpp", 
+																	"go", 
+																	"lua",
+																	"python"
+																},
                                 highlight = { enable = true, }
                         }
                 end
