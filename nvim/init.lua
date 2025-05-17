@@ -15,6 +15,8 @@ vim.opt.smartcase = true
 -- Show line numbers relatively
 vim.opt.number = true
 vim.opt.relativenumber = true
+-- highlight current line
+vim.opt.cursorline = true
 
 -- Replace all by-default
 vim.opt.gdefault = true
