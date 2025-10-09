@@ -78,14 +78,9 @@ require('lazy').setup({
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
-			-- Setup language servers.
-			local lspconfig = require('lspconfig')
-			--lspconfig.clangd.setup {
-			--	on_attach = on_lsp_attach,
-			--}
-			lspconfig.gopls.setup {
+			vim.lsp.config("gopls", {
 				on_attach = on_lsp_attach,
-			}
+			})
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
 			vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -135,7 +130,7 @@ require('lazy').setup({
 			vim.cmd([[colorscheme gruvbox]])
 		end,
 	},
-	{
+	{ 
 		"nvim-telescope/telescope-fzf-native.nvim",
 		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
 	},
@@ -225,9 +220,9 @@ require('lazy').setup({
 					['<C-f>'] = cmp.mapping.scroll_docs(4),
 					['<C-Space>'] = cmp.mapping.complete(),
 					['<C-e>'] = cmp.mapping.abort(),
-					-- Accept currently selected item. Set `select` to `false` to only
+					-- Accept currently selected item. Set `select` to `false` to only 
 					-- confirm explicitly selected items.
-					['<CR>'] = cmp.mapping.confirm({ select = true }),
+					['<CR>'] = cmp.mapping.confirm({ select = true }), 
 				}),
 				sources = cmp.config.sources({
 					{ name = 'nvim_lsp' },
@@ -266,13 +261,9 @@ require('lazy').setup({
 			})
 			-- Set up lspconfig.
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			-- TODO Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-			--require('lspconfig')['clangd'].setup {
-			--	capabilities = capabilities
-			--}
-			require('lspconfig')['gopls'].setup {
+			vim.lsp.config("gopls", {
 				capabilities = capabilities
-			}
+			})
 		end,
 	},
 	-- debugger
@@ -280,10 +271,10 @@ require('lazy').setup({
 		"mfussenegger/nvim-dap"
 	},
 	-- debugger ui
-	{
-		"rcarriga/nvim-dap-ui",
+	{ 
+		"rcarriga/nvim-dap-ui", 
 		dependencies = {
-			"mfussenegger/nvim-dap",
+			"mfussenegger/nvim-dap", 
 			"nvim-neotest/nvim-nio"
 		},
 		config = function()
