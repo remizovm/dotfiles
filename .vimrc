@@ -7,6 +7,7 @@ set tabstop=2
 set smartindent
 set laststatus=2
 set noshowmode
+set cursorline
 
 call plug#begin()
 
@@ -14,6 +15,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
